@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Post2</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Lorem ipsum</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Fix CSS module problem in create-react-app</a></h2>
+										<p>CSS module create-react-app not working in production environment</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2021-03-24">March 24, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+									</div>
+								</header>
+								<!-- <span class="image featured"><img src="images/post1.jpeg" alt="" /></span> -->
+								<p>I buil react app using <strong>create-react-app</strong>.
+								<br>
+									<code><span style="color: #dd1144;">$ create-react-app myApp</span></code>
+									<br>
+									<code><span style="color: #dd1144;">$ cd myApp/</span></code>
+									<br>
+									<code><span style="color: #dd1144;">$ yarn start</span></code>
+								</p>
+								<p>In my case, I deploy my app to Heroku. After successfully built the application, I found out my website was in a mess because CSS module is not working.&nbsp;</p>
+								<p>If the CSS module is not working, you can use the <strong>eject command</strong>: <code><span style="color: #dd1144;">$ yarn eject</span></code></p>
+								<p>This command will remove the single build dependency from your project. it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except <strong>eject </strong>will still work, but they will point to the copied scripts so you can tweak them. At this point, you&rsquo;re on your own.</p>
+								<p><strong>IMPROTANT!!!! Note: this is a one-way operation. Once you eject, you can&rsquo;t go back!</strong></p>
+								<p>Here&rsquo;s what happens when you eject:</p>
+								<blockquote>
+								<span style="color: #dd1144;">$ yarn eject</span><br>
+								Are you sure you want to eject? This action is permanent. [y/N]&nbsp; y<br>
+								Ejecting&hellip;<br>
+								Copying files into /Users/user/src/myApp
+								</blockquote>
+								<p>Running a Git status on your project after running yarn eject shows the affected files and directories:</p>
+								<blockquote>
+								<span style="color: #dd1144;">$ git status</span><br>
+								Changes not staged for commit:<br>
+								modified: &nbsp; package.json<br>
+								Untracked files:<br>
+								config/<br>
+								scripts/<br>
+								</blockquote>
+								<p>Commit those changes and you are ready to configure <strong>CSS Modules</strong>.</p>
+								<p>Find the css-loader section in your Webpack dev config (config/webpack.dev.prod.js) and change the options portion as so:</p>
+								<p>Before<br>
+								<code>
+									{
+										loader: require.resolve('css-loader'),
+										options: {
+												importLoaders: 1,
+											},
+									},</code>
+								</p>
+								<p>After<br>
+									<code>
+										{
+											loader: require.resolve('css-loader'),
+											options: {
+												importLoaders: 1,
+												modules: true,
+												localIdentName: "[name]__[local]___[hash:base64:5]"
+											},
+										}</code>
+									</p>
+								<p>Do the same in your Webpack production config (config/webpack.config.prod.js):</p>
+								<p>Before<br>
+									<code>
+										{
+											loader: require.resolve('css-loader'),
+											options: {
+												importLoaders: 1,minimize: true,
+												sourceMap: true,
+											},
+										},</code>
+									</p>
+								<p>After<br><code>
+									{
+									 loader: require.resolve('css-loader'),
+									 options: {
+											importLoaders: 1,
+											modules: true,
+											minimize: true,
+									 		sourceMap: true,
+										},
+									}</code>
+								</p>
+								<p>Then you are all set! Restart your react app to see your design.</p>
+
+								<footer>
+									<ul class="stats">
+										<li><a href="#" class="icon solid fa-hashtag">Tech</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">terminal</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">react</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Shiyun Zhang 2021. Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
