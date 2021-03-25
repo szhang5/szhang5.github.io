@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leetcode1801</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+
+						<!-- Links -->
+							<section>
+								<ul class="links">
+									<li>
+										<a href="#">
+											<h3>Lorem ipsum</h3>
+											<p>Feugiat tempus veroeros dolor</p>
+										</a>
+									</li>
+								</ul>
+							</section>
+
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">1801. Number of Orders in the Backlog</a></h2>
+										<p>Medium Problem</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2021-03-24">March 25, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+									</div>
+								</header>
+								<span class="image featured"><img src="images/leetcode.png" alt="" /></span>
+								<h3>Problem Analyse</h3>
+									<p>We have a list of orders where orders[i] = [pricei, amounti, orderTypei]. We have two different order types which are &lsquo;BUY&rsquo; indicated by 0 and &lsquo;SELL&rsquo; indicated by 1. And we always process orders starting from the ith order. <strong>Here we know we need to loop through the orders list.</strong></p>
+									<p>So what&rsquo;s the rules when we process order:</p>
+									<ol>
+										<li>When the order type is &lsquo;BUY&rsquo;(0), we need to find the &lsquo;SELL&rsquo;(1) orders with the smallest selling price, <strong>here we know we may need to use the min heap</strong>.&nbsp; Then we need to see if the buying price is greater than or equal to the selling price. If not, then we add the &lsquo;BUY&rsquo; order to the backlog. If yes, we will process the &lsquo;BUY&rsquo; order:</li>
+										<ul>
+											<li>Since the &lsquo;BUY&rsquo; order has an amount limit and we need to process the order one by one. We also need to make sure the amount of the &lsquo;SELL&rsquo; orders are enough. <strong>Here we will use a while loop</strong> to process all the &lsquo;BUY&rsquo; orders that match with a &lsquo;SELL&rsquo; order.</li>
+										</ul>
+										<li>When the order type is &lsquo;SELL&rsquo;(1), we need to find the &lsquo;BUY&rsquo;(0) orders with the largesting buying price, <strong>here we know we may need to use the max heap</strong>.&nbsp; Then we need to see if the selling price is less than or equal to the buying price. If not, then we add the &lsquo;SELL&rsquo; order to the backlog. If yes, we will process the &lsquo;SELL&rsquo; order:</li>
+										<ul>
+											<li>Since the &lsquo;SELL&rsquo; order has an amount limit and we need to process the order one by one. We also need to make sure the amount of the &lsquo;BUY&rsquo; orders are enough. <strong>Here we will use a while loop</strong> to process all the &lsquo;BUY&rsquo; orders that match with&nbsp; a &lsquo;SELL&rsquo; order.</li>
+										</ul>
+									</ol>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/8bfe0cc47ce8abaee2e17e486c98c839.js"></script>
+								<footer>
+									<ul class="stats">
+										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1801</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Shiyun Zhang 2021. Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
