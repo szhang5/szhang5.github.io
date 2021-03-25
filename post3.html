@@ -84,7 +84,7 @@
 								</header>
 								<span class="image featured"><img src="images/leetcode.png" alt="" /></span>
 								<h3>Problem Analyse</h3>
-									<p>We have a list of orders where orders[i] = [pricei, amounti, orderTypei]. We have two different order types which are &lsquo;BUY&rsquo; indicated by 0 and &lsquo;SELL&rsquo; indicated by 1. And we always process orders starting from the ith order. <strong>Here we know we need to loop through the orders list.</strong></p>
+									<p>We have a list of orders where orders[i] = [price<sub>i</sub>, amount<sub>i</sub>, orderType<sub>i</sub>]. We have two different order types which are &lsquo;BUY&rsquo; indicated by 0 and &lsquo;SELL&rsquo; indicated by 1. And we always process orders starting from the ith order. <strong>Here we know we need to loop through the orders list.</strong></p>
 									<p>So what&rsquo;s the rules when we process order:</p>
 									<ol>
 										<li>When the order type is &lsquo;BUY&rsquo;(0), we need to find the &lsquo;SELL&rsquo;(1) orders with the smallest selling price, <strong>here we know we may need to use the min heap</strong>.&nbsp; Then we need to see if the buying price is greater than or equal to the selling price. If not, then we add the &lsquo;BUY&rsquo; order to the backlog. If yes, we will process the &lsquo;BUY&rsquo; order:</li>
