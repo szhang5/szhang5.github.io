@@ -91,49 +91,9 @@
 								scripts/<br>
 								</blockquote>
 								<p>Commit those changes and you are ready to configure <strong>CSS Modules</strong>.</p>
-								<p>Find the css-loader section in your Webpack dev config (config/webpack.dev.prod.js) and change the options portion as so:</p>
-								<p>Before<br>
-								<code>
-									{
-										loader: require.resolve('css-loader'),
-										options: {
-												importLoaders: 1,
-											},
-									},</code>
-								</p>
-								<p>After<br>
-									<code>
-										{
-											loader: require.resolve('css-loader'),
-											options: {
-												importLoaders: 1,
-												modules: true,
-												localIdentName: "[name]__[local]___[hash:base64:5]"
-											},
-										}</code>
-									</p>
-								<p>Do the same in your Webpack production config (config/webpack.config.prod.js):</p>
-								<p>Before<br>
-									<code>
-										{
-											loader: require.resolve('css-loader'),
-											options: {
-												importLoaders: 1,minimize: true,
-												sourceMap: true,
-											},
-										},</code>
-									</p>
-								<p>After<br><code>
-									{
-									 loader: require.resolve('css-loader'),
-									 options: {
-											importLoaders: 1,
-											modules: true,
-											minimize: true,
-									 		sourceMap: true,
-										},
-									}</code>
-								</p>
+
+								<h3>Change the config</h3>
+								<script src="https://gist.github.com/szhang5/da58581896773b324e9d6440a9d325da.js"></script>
 								<p>Then you are all set! Restart your react app to see your design.</p>
 
 								<footer>
