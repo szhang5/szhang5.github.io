@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Post1</title>
+		<title>Leetcode1789</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,6 +19,15 @@
 				<!-- Header -->
 					<header id="header">
 						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
 						<nav class="main">
 							<ul>
 								<li class="search">
@@ -43,8 +52,6 @@
 									<input type="text" name="query" placeholder="Search" />
 								</form>
 							</section>
-
-
 					</section>
 
 				<!-- Main -->
@@ -54,27 +61,45 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Setup Terminal for Sublime Shortcut</a></h2>
-										<p>Sublime Shortcut "subl" in ox x commend line</p>
+										<h2><a href="#">1789. Maximum Number of Consecutive Values You Can Make</a></h2>
+										<p>Medium Problem</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2021-03-24">March 24, 2021</time>
+										<time class="published" datetime="2021-03-26">March 26, 2021</time>
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<!-- <span class="image featured"><img src="images/post1.jpeg" alt="" /></span> -->
-								<p>As people working in the Terminal more and more these days, it is always good to know some shortcuts to save times. A really useful tip that I find out is how to open up Sublime Text straight from the Terminal. This is done by hooking into a CLI utility that Sublime provides called subl.</p>
-								<p>The following instructions are based largely on the original <a href="https://gist.github.com/artero/1236170" target="_blank" rel="noopener">gist on Github</a> by <a href="https://github.com/artero" target="_blank" rel="noopener">Artero</a>, so credit for this solution should be directed to them and not myself.</p>
-								<p>It&rsquo;s a slightly different installation depending on whether you&rsquo;re using Sublime Text 2 or 3, so I&rsquo;ll split the two out below in the installation.&nbsp;</p>
-								<p>For sublime 2: <br><code><span style="color: #dd1144;">sudo ln -s "/Applications/Sublime\ Text\2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime</code></p>
-								<p>For sublime 3: <br><code><span style="color: #dd1144;">sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime</span></code></p>
-								<p>Restart Terminal and you are all set.</p>
-
+								<h3>Problem Analysis</h3>
+								<img src="images/post4.png" alt="" width="500" />
+								<p>We have a list of coins and we need to return the maximum number of consecutive integer values that we can make with the coins starting from and including 0.</p>
+								<p>Let&rsquo;s compare two examples:</p>
+								<blockquote>
+									Example 1:<br>
+									Coins = [1, 1, 1, 4]<br>
+									0 :&nbsp;<br>
+									1: 1<br>
+									2: 1+1<br>
+									3: 1+1+1<br>
+									4: 4<br>
+									5: 4+1 (we can do this because we have 4 and 1)<br>
+									6: 4+1+1 (we can do this because we have 4 and 2)<br>
+									7: 4+1+1+1 ( we can do this because we have 4 and 3)<br>
+									8?? (we have 6 and 2 why can not add it up to 8? because the maximum sum is 7 based on the coins)
+								</blockquote>
+								<blockquote>
+									Example 2:<br>
+									Coins = [1, 4, 6]<br>
+									0:&nbsp;<br>
+									1: 1<br>
+									2?? (we have 1 why cannot use 1+1? because we only have one &lsquo;1&rsquo; in the coins)
+								</blockquote>
+								<h3>Code Example</h3>
+								<script src="https://gist.github.com/szhang5/9b707b2871559b0a40669c2165c63616.js"></script>
 								<footer>
 									<ul class="stats">
-										<li><a href="#" class="icon solid fa-hashtag">Tech</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">terminal</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">sublime</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1789</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
 									</ul>
 								</footer>
 							</article>
