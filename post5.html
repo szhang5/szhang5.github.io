@@ -70,7 +70,7 @@
 									</div>
 								</header>
 								<h3>Problem Analysis</h3>
-								<img src="images/post5.png" alt="" width="500" />
+								<span class="featured_img"><img src="images/post5.png" alt="" width="500" /></span>
 								<p>Need to design an AuthenticationManager to generate tokens. When initializing theAuthenticationManager, we will initialize the token life which is TimeToLive. For the above example, we call AuthenticationManager(5) then we will have token Life for 5 seconds.</p>
 								<p>If generated('aaa', 2) then token 'aaa' will expire at 2+5 = 7 second. Here we need to have something to store the tokens and its life. Dict is the first choice here because we have tokenId. Since we need to count unexpiredToken, to avoid looping through the Dict everytime, we may want to use the orderedDict so that we can put the newly generated token or renewed token to the end of the Dict.</p>
 								<p>Let's go through the example above:</p>
