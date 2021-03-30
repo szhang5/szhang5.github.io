@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leetcode343</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">343. Integer Break</a></h2>
+										<p>Medium Problem</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2021-03-27">March 27, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+									</div>
+								</header>
+								<h3>Problem Analysis</h3>
+								<span class="featured_img"><img src="images/post7.png" alt="" width="500" /></span>
+								<h4>DP solution</h4>
+								Given the following examples:<br>
+								<blockquote>
+									2: 1+1 => 1 * 1 = 1<br>
+									3: 2+1 => 2 * 1 = 2<br>
+									4: 2+2 => 2 * 2 = 4<br>
+									5: 3+2 => 3 * 2 = 6<br>
+									6: 1+5 / 2+4 / 3+3 => 1*5 / 2*4/ 3*3 => 9<br>
+									7: 1+6 / 2+5 / 3+4 => 1*9 / 2*6 / 3*4 => 12<br>
+									8: 1+7 / 2+6 / 3+5 / 4+4 => 1*12 / 2*9 / 3*6 / 4*4 => 18<br>
+								</blockquote>
+								<p>We can retrieve the corresponding maximum product from a specific number like 8 = 2 + 6 =&gt; 2 * 9 = 18. The maximum product of 6 is 9</p>
+								<h4>Mathematical solution</h4>
+								Given the following examples:<br>
+								<blockquote>
+									7 = 3 + 4 = 12<br>
+									8 = 3 + 3 + 2 = 18<br>
+									9 = 3 + 3 + 3 = 27<br>
+									10 = 3 + 3 + 4 = 36<br>
+									11 = 3 + 3 + 3 + 2 = 54<br>
+									12 = 3 + 3 + 3 + 3 = 81<br>
+								</blockquote>
+								<p>3 is a magical number</p>
+								<h3>Code Example</h3>
+								<script src="https://gist.github.com/szhang5/24cf9c170584f6e2ee32177b9b7a33e9.js"></script>
+								<footer>
+									<ul class="stats">
+										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">343</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Shiyun Zhang 2021. Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
