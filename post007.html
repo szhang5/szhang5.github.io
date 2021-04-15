@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Leetcode1813</title>
+		<title>Leetcode343</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -61,29 +61,45 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">1813. Sentence Similarity III</a></h2>
+										<h2><a href="#">343. Integer Break</a></h2>
 										<p>Medium Problem</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2021-04-08">April 8, 2021</time>
+										<time class="published" datetime="2021-03-27">March 27, 2021</time>
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
 								<h3>Problem Analysis</h3>
-								<span class="featured_img"><img src="images/post8.png" alt="" width="500" /></span>
-								<p>Two sentences sentence1 and sentence2 are similar if it is possible to insert an arbitrary sentence (possibly empty) inside one of these sentences such that the two sentences become equal.&nbsp;</p>
-								<p>From the above definition, we know:</p>
-								<ol>
-									<li>If sentence1 equals to sentence2, then these two sentences are similar because we can insert empty inside sentence1 or sentence2</li>
-									<li>If any word in sentence1 not in sentence2 or any word in sentence2 not in sentence1, these two sentences are not similar</li>
-									<li>If words in sentence1 in the middle of sentence2, these two sentences are not similar</li>
-								</ol>
+								<span class="featured_img"><img src="images/post007.png" alt="" width="500" /></span>
+								<h4>DP solution</h4>
+								Given the following examples:<br>
+								<blockquote>
+									2: 1+1 => 1 * 1 = 1<br>
+									3: 2+1 => 2 * 1 = 2<br>
+									4: 2+2 => 2 * 2 = 4<br>
+									5: 3+2 => 3 * 2 = 6<br>
+									6: 1+5 / 2+4 / 3+3 => 1*5 / 2*4/ 3*3 => 9<br>
+									7: 1+6 / 2+5 / 3+4 => 1*9 / 2*6 / 3*4 => 12<br>
+									8: 1+7 / 2+6 / 3+5 / 4+4 => 1*12 / 2*9 / 3*6 / 4*4 => 18<br>
+								</blockquote>
+								<p>We can retrieve the corresponding maximum product from a specific number like 8 = 2 + 6 =&gt; 2 * 9 = 18. The maximum product of 6 is 9</p>
+								<h4>Mathematical solution</h4>
+								Given the following examples:<br>
+								<blockquote>
+									7 = 3 + 4 = 12<br>
+									8 = 3 + 3 + 2 = 18<br>
+									9 = 3 + 3 + 3 = 27<br>
+									10 = 3 + 3 + 4 = 36<br>
+									11 = 3 + 3 + 3 + 2 = 54<br>
+									12 = 3 + 3 + 3 + 3 = 81<br>
+								</blockquote>
+								<p>3 is a magical number</p>
 								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/011ea72a0ff78d848f2b8d1f15abcd6d.js"></script>
+								<script src="https://gist.github.com/szhang5/24cf9c170584f6e2ee32177b9b7a33e9.js"></script>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">1813</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">343</a></li>
 										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
 									</ul>
 								</footer>

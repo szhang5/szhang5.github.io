@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Leetcode1792</title>
+		<title>Leetcode1801</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,15 +19,6 @@
 				<!-- Header -->
 					<header id="header">
 						<h1><a href="index.html">Shiyun's Blog</a></h1>
-						<nav class="links">
-							<ul>
-							<!-- 	<li><a href="#">Lorem</a></li>
-								<li><a href="#">Ipsum</a></li>
-								<li><a href="#">Feugiat</a></li>
-								<li><a href="#">Tempus</a></li>
-								<li><a href="#">Adipiscing</a></li> -->
-							</ul>
-						</nav>
 						<nav class="main">
 							<ul>
 								<li class="search">
@@ -52,6 +43,7 @@
 									<input type="text" name="query" placeholder="Search" />
 								</form>
 							</section>
+
 					</section>
 
 				<!-- Main -->
@@ -61,35 +53,34 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">1792. Maximum Average Pass Ratio</a></h2>
+										<h2><a href="#">1801. Number of Orders in the Backlog</a></h2>
 										<p>Medium Problem</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2021-03-27">March 27, 2021</time>
+										<time class="published" datetime="2021-03-25">March 25, 2021</time>
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
 								<h3>Problem Analysis</h3>
-								<span class="featured_img"><img src="images/post6.png" alt="" width="500" /></span>
-								<p>We need to calculate the maximum average pass ratio in this problem. We are given a 2D array that stands for classes which classi has passi students pass the exam and totali number of total students in the class.</p>
-								<p>To calculate the average pass ratio of the school we should:</p>
-								<ol>
-								<li>Calculate the average pass ratio of the class => classPassRatio = pass / total</li>
-								<li>Calculate the average pass ratio of the school => schoolPassRatio = sum of classPassRatio / numberOfClasses</li>
-								</ol>
-								<p>From the above steps, in order to get the maximum average pass ratio, we need to get the maximum sum of classPassRatio, which means we need to maximize the pass ratio when we assign extra students to the specific class. To do this we need to calculate the impact when we assign a extra student:</p>
-								<ul>
-								<li>currentRatio = pass / total</li>
-								<li>afterAssignedExtraStudentRatio = pass+1 / total+1</li>
-								<li>Impact = afterAssignedExtraStudentRatio - currentRatio</li>
-								</ul>
-								<p>To always get the largest impact, we will use the max heap data structure. We know that in python, heapq can only generate min heap for us but we can use negative number to turn the min heap to max heap</p>
-								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/57237a81b45a6d4995cf288d93faf3a6.js"></script>
+									<span class="featured_img"><img src="images/post003.png" alt="" width="500" /></span>
+									<p>We have a list of orders where orders[i] = [price<sub>i</sub>, amount<sub>i</sub>, orderType<sub>i</sub>]. We have two different order types which are &lsquo;BUY&rsquo; indicated by 0 and &lsquo;SELL&rsquo; indicated by 1. And we always process orders starting from the ith order. <strong>Here we know we need to loop through the orders list.</strong></p>
+									<p>So what&rsquo;s the rules when we process order:</p>
+									<ol>
+										<li>When the order type is &lsquo;BUY&rsquo;(0), we need to find the &lsquo;SELL&rsquo;(1) orders with the smallest selling price, <strong>here we know we may need to use the min heap</strong>.&nbsp; Then we need to see if the buying price is greater than or equal to the selling price. If not, then we add the &lsquo;BUY&rsquo; order to the backlog. If yes, we will process the &lsquo;BUY&rsquo; order:</li>
+										<ul>
+											<li>Since the &lsquo;BUY&rsquo; order has an amount limit and we need to process the order one by one. We also need to make sure the amount of the &lsquo;SELL&rsquo; orders are enough. <strong>Here we will use a while loop</strong> to process all the &lsquo;BUY&rsquo; orders that match with a &lsquo;SELL&rsquo; order.</li>
+										</ul>
+										<li>When the order type is &lsquo;SELL&rsquo;(1), we need to find the &lsquo;BUY&rsquo;(0) orders with the largesting buying price, <strong>here we know we may need to use the max heap</strong>.&nbsp; Then we need to see if the selling price is less than or equal to the buying price. If not, then we add the &lsquo;SELL&rsquo; order to the backlog. If yes, we will process the &lsquo;SELL&rsquo; order:</li>
+										<ul>
+											<li>Since the &lsquo;SELL&rsquo; order has an amount limit and we need to process the order one by one. We also need to make sure the amount of the &lsquo;BUY&rsquo; orders are enough. <strong>Here we will use a while loop</strong> to process all the &lsquo;BUY&rsquo; orders that match with&nbsp; a &lsquo;SELL&rsquo; order.</li>
+										</ul>
+									</ol>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/8bfe0cc47ce8abaee2e17e486c98c839.js"></script>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">1792</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1801</a></li>
 										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
 									</ul>
 								</footer>

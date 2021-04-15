@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Post1</title>
+		<title>Leetcode1797</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -19,6 +19,15 @@
 				<!-- Header -->
 					<header id="header">
 						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
 						<nav class="main">
 							<ul>
 								<li class="search">
@@ -43,8 +52,6 @@
 									<input type="text" name="query" placeholder="Search" />
 								</form>
 							</section>
-
-
 					</section>
 
 				<!-- Main -->
@@ -54,27 +61,38 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">Setup Terminal for Sublime Shortcut</a></h2>
-										<p>Sublime Shortcut "subl" in ox x commend line</p>
+										<h2><a href="#">1797. Design Authentication Manager</a></h2>
+										<p>Medium Problem</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2021-03-24">March 24, 2021</time>
+										<time class="published" datetime="2021-03-26">March 26, 2021</time>
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<!-- <span class="image featured"><img src="images/post1.jpeg" alt="" /></span> -->
-								<p>As people working in the Terminal more and more these days, it is always good to know some shortcuts to save times. A really useful tip that I find out is how to open up Sublime Text straight from the Terminal. This is done by hooking into a CLI utility that Sublime provides called subl.</p>
-								<p>The following instructions are based largely on the original <a href="https://gist.github.com/artero/1236170" target="_blank" rel="noopener">gist on Github</a> by <a href="https://github.com/artero" target="_blank" rel="noopener">Artero</a>, so credit for this solution should be directed to them and not myself.</p>
-								<p>It&rsquo;s a slightly different installation depending on whether you&rsquo;re using Sublime Text 2 or 3, so I&rsquo;ll split the two out below in the installation.&nbsp;</p>
-								<p>For sublime 2: <br><code><span style="color: #dd1144;">sudo ln -s "/Applications/Sublime\ Text\2.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime</code></p>
-								<p>For sublime 3: <br><code><span style="color: #dd1144;">sudo ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/sublime</span></code></p>
-								<p>Restart Terminal and you are all set.</p>
+								<h3>Problem Analysis</h3>
+								<span class="featured_img"><img src="images/post005.png" alt="" width="500" /></span>
+								<p>Need to design an AuthenticationManager to generate tokens. When initializing theAuthenticationManager, we will initialize the token life which is TimeToLive. For the above example, we call AuthenticationManager(5) then we will have token Life for 5 seconds.</p>
+								<p>If generated('aaa', 2) then token 'aaa' will expire at 2+5 = 7 second. Here we need to have something to store the tokens and its life. Dict is the first choice here because we have tokenId. Since we need to count unexpiredToken, to avoid looping through the Dict everytime, we may want to use the orderedDict so that we can put the newly generated token or renewed token to the end of the Dict.</p>
+								<p>Let's go through the example above:</p>
+								<ol>
+									<li>init an OrderedDict => d = {} and we know the tokenLife = 5</li>
+									<li>renew tokenId 'aaa' at 1. We don't have tokenId in d, ignore it</li>
+									<li>generate tokenId 'aaa' at 2 => d = {'aaa': 7(2+5)}</li>
+									<li>countUnexpriedTokens at 6, we got 1 which is 'aaa'</li>
+									<li>generate tokenId 'bbb' at 7 => d = {'aaa': 7 (expired), 'bbb':12}, here we should remove the expired token 'aaa' from d.</li>
+									<li>renew tokenId 'aaa' at 8. 'aaa' is expired, ignore it</li>
+									<li>renew tokenId 'bbb' at 10. 'bbb' is alive => d = {'bbb': 15(10+5)}</li>
+									<li>countUnexpriedTokens at 15, d = {'bbb' : 15}, no token alive, return 0</li>
+								</ol>
 
+								<p>To always keep the token in d alive, we need to remove the expired token in time.</p>
+								<h3>Code Example</h3>
+								<script src="https://gist.github.com/szhang5/9bfd94fe6e3d7d2915defbb0992980c6.js"></script>
 								<footer>
 									<ul class="stats">
-										<li><a href="#" class="icon solid fa-hashtag">Tech</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">terminal</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">sublime</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1797</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
 									</ul>
 								</footer>
 							</article>
