@@ -1,0 +1,126 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Leetcode1793</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">1793. Maximum Score of a Good Subarray</a></h2>
+										<p>Hard Problem</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2021-04-15">April 15, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+									</div>
+								</header>
+								<h3>Problem Analysis</h3>
+								<p>You are given an array of integers nums (0-indexed) and an integer k.</p>
+								<p>The score of a subarray (i, j) is defined as min(nums[i], nums[i+1], ..., nums[j]) * (j - i + 1). A good subarray is a subarray where i &lt;= k &lt;= j.</p>
+								<p>Return the maximum possible score of a good subarray.</p>
+								<span class="featured_img"><img src="images/post013.png" alt="" width="500" /></span>
+								<p>
+									According to the problem, the score is calculated by:<br>
+									<strong>(minimum number in an subarray) * (length of the subarray)</strong>
+								</p>
+								<p>
+									For example: nums = [1,4,3,7,4,5], k = 3<br>
+									Then we need to see the kth element as center of the subarray<br>
+									<blockquote>
+										1) Subarray = [3] --> score = 3 * 1 = 3<br>
+										2) Subarray = [4,3] --> score = 3 * 2 = 6<br>
+										3) Subarray = [3, 7] --> score = 3 * 2 = 6<br>
+										4) Subarray = [4,3,7] --> score = 3 * 3 = 9<br>
+									</blockquote>
+								</p>
+								<p>From the above we can see, when the minimum number in the subarray does not change, the maximum score will be determined by the length. We should find the longest length for the specific minimum number. E.g. when minimum number is 3, we should get subarray = [4,3,7,4,5] which score is 3 * 5 = 15 and then switch to minimum number = 1, where subarray = [1,4,3,7,4,5] and score is 1 * 6 = 6.</p>
+								<h3>Code Example</h3>
+								<script src="https://gist.github.com/szhang5/29f4d46ce200957899eaddb56c7716d9.js"></script>
+								<footer>
+									<ul class="stats">
+										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1793</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Hard</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Shiyun Zhang 2021. Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
