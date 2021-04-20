@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Python functools -- lru_cache()</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Python functools -- lru_cache()</a></h2>
+										<p>LRU_CACHE</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2021-04-19">April 19, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+									</div>
+								</header>
+								<h3>Definition</h3>
+								<p>LRU_Cache stands for least recently used cache.</p>
+								<p>lru_cache() is one such function in python functools module which helps in reducing the execution time of the function by using memoization technique.</p>
+								<blockquote>
+									<strong>Syntax:</strong><br>
+									@lru_cache(maxsize=128, typed=False)<br><br>
+									<strong>Parameters:</strong><br>
+									maxsize: This parameter sets the size of the cache, the cache can store upto maxsize most recent function calls, if maxsize is set to None, the LRU feature will be disabled and the cache can grow without any limitations<br><br>
+									typed: If typed is set to True, function arguments of different types will be cached separately. For example, f(5) and f(5.0) will be treated as distinct calls with distinct results and they will be stored in two separate entries in the cache<br>
+								</blockquote>
+								<h3>Code</h3>
+								<script src="https://gist.github.com/szhang5/d67e189b99e7d0c068c1bc634657aa2a.js"></script>
+								<footer>
+									<ul class="stats">
+										<li><a href="#" class="icon solid fa-hashtag">lru_cache</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">python</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">cache</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Shiyun Zhang 2021. Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
