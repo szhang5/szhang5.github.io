@@ -69,28 +69,30 @@
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<h3>Problem Analysis</h3>
-								<p>You are given an array of integers nums (0-indexed) and an integer k.</p>
-								<p>The score of a subarray (i, j) is defined as min(nums[i], nums[i+1], ..., nums[j]) * (j - i + 1). A good subarray is a subarray where i &lt;= k &lt;= j.</p>
-								<p>Return the maximum possible score of a good subarray.</p>
-								<span class="featured_img"><img src="images/post013.png" alt="" width="500" /></span>
-								<p>
-									According to the problem, the score is calculated by:<br>
-									<strong>(minimum number in an subarray) * (length of the subarray)</strong>
-								</p>
-								<p>
-									For example: nums = [1,4,3,7,4,5], k = 3<br>
-									Then we need to see the kth element as center of the subarray<br>
-									<blockquote>
-										1) Subarray = [3] --> score = 3 * 1 = 3<br>
-										2) Subarray = [4,3] --> score = 3 * 2 = 6<br>
-										3) Subarray = [3, 7] --> score = 3 * 2 = 6<br>
-										4) Subarray = [4,3,7] --> score = 3 * 3 = 9<br>
-									</blockquote>
-								</p>
-								<p>From the above we can see, when the minimum number in the subarray does not change, the maximum score will be determined by the length. We should find the longest length for the specific minimum number. E.g. when minimum number is 3, we should get subarray = [4,3,7,4,5] which score is 3 * 5 = 15 and then switch to minimum number = 1, where subarray = [1,4,3,7,4,5] and score is 1 * 6 = 6.</p>
-								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/29f4d46ce200957899eaddb56c7716d9.js"></script>
+								<div class="content">
+									<h3>Problem Analysis</h3>
+									<p>You are given an array of integers nums (0-indexed) and an integer k.</p>
+									<p>The score of a subarray (i, j) is defined as min(nums[i], nums[i+1], ..., nums[j]) * (j - i + 1). A good subarray is a subarray where i &lt;= k &lt;= j.</p>
+									<p>Return the maximum possible score of a good subarray.</p>
+									<span class="featured_img"><img src="images/post013.png" alt="" width="500" /></span>
+									<p>
+										According to the problem, the score is calculated by:<br>
+										<strong>(minimum number in an subarray) * (length of the subarray)</strong>
+									</p>
+									<p>
+										For example: nums = [1,4,3,7,4,5], k = 3<br>
+										Then we need to see the kth element as center of the subarray<br>
+										<blockquote>
+											1) Subarray = [3] --> score = 3 * 1 = 3<br>
+											2) Subarray = [4,3] --> score = 3 * 2 = 6<br>
+											3) Subarray = [3, 7] --> score = 3 * 2 = 6<br>
+											4) Subarray = [4,3,7] --> score = 3 * 3 = 9<br>
+										</blockquote>
+									</p>
+									<p>From the above we can see, when the minimum number in the subarray does not change, the maximum score will be determined by the length. We should find the longest length for the specific minimum number. E.g. when minimum number is 3, we should get subarray = [4,3,7,4,5] which score is 3 * 5 = 15 and then switch to minimum number = 1, where subarray = [1,4,3,7,4,5] and score is 1 * 6 = 6.</p>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/29f4d46ce200957899eaddb56c7716d9.js"></script>
+								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>

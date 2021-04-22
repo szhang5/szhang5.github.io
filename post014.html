@@ -69,36 +69,38 @@
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<h3>Problem Analysis</h3>
-								<span class="featured_img"><img src="images/post014.png" alt="" width="500" /></span>
-								<p>
-									Solution 1:<br>
-									When n = 5, k = 2<br>
-									i = 0<br>
-									i = (0 + k - 1) % len(Arr) = 0 + 2 -1 = 1%5 = 1<br>
-									Arr = [1,2,3,4,5] --> remove arr[1] --> Arr = [1,3,4,5]<br>
-									i = 1<br>
-									i = (1 + k -1) % len(Arr) = 1 + 2 - 1 = 2 % 4 = 2<br>
-									Arr = [1,3,4,5] --> remove arr[2] --> Arr = [1,3,5]<br>
-									i = 2<br>
-									i = (2 + k - 1) % len(Arr) = 2 + 2 - 1 = 3 % 3 = 0<br>
-									Arr = [1,3,5] --> remove arr[0] --> Arr = [3,5]<br>
-									i = 0<br>
-									i = (0 + k - 1) % len(Arr) = 0 + 2 - 1 = 1 % 2 = 1<br>
-									Arr = [3,5] --> remove arr[1] --> Arr = [3]<br>
-									Result: 3
-								</p>
-								<p>
-									Solution 2 (Easier understanding)<br>
-									When n = 5, k = 2<br>
-									[1,2,3,4,5] remove 2<br>
-									--> start counting from 3: [3,4,5,1] remove 4<br>
-									--> start counting from 5: [5,1,3] remove 1<br>
-									--> start counting from 3: [3, 5] remove 5<br>
-									[3] --> result 3
-								</p>
-								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/0ffb974aaf793cc7eba2fc5f4abf6af2.js"></script>
+								<div class="content">
+									<h3>Problem Analysis</h3>
+									<span class="featured_img"><img src="images/post014.png" alt="" width="500" /></span>
+									<p>
+										Solution 1:<br>
+										When n = 5, k = 2<br>
+										i = 0<br>
+										i = (0 + k - 1) % len(Arr) = 0 + 2 -1 = 1%5 = 1<br>
+										Arr = [1,2,3,4,5] --> remove arr[1] --> Arr = [1,3,4,5]<br>
+										i = 1<br>
+										i = (1 + k -1) % len(Arr) = 1 + 2 - 1 = 2 % 4 = 2<br>
+										Arr = [1,3,4,5] --> remove arr[2] --> Arr = [1,3,5]<br>
+										i = 2<br>
+										i = (2 + k - 1) % len(Arr) = 2 + 2 - 1 = 3 % 3 = 0<br>
+										Arr = [1,3,5] --> remove arr[0] --> Arr = [3,5]<br>
+										i = 0<br>
+										i = (0 + k - 1) % len(Arr) = 0 + 2 - 1 = 1 % 2 = 1<br>
+										Arr = [3,5] --> remove arr[1] --> Arr = [3]<br>
+										Result: 3
+									</p>
+									<p>
+										Solution 2 (Easier understanding)<br>
+										When n = 5, k = 2<br>
+										[1,2,3,4,5] remove 2<br>
+										--> start counting from 3: [3,4,5,1] remove 4<br>
+										--> start counting from 5: [5,1,3] remove 1<br>
+										--> start counting from 3: [3, 5] remove 5<br>
+										[3] --> result 3
+									</p>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/0ffb974aaf793cc7eba2fc5f4abf6af2.js"></script>
+								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>

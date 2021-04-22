@@ -69,23 +69,25 @@
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<h3>Problem Analysis</h3>
-								<span class="featured_img"><img src="images/post006.png" alt="" width="500" /></span>
-								<p>We need to calculate the maximum average pass ratio in this problem. We are given a 2D array that stands for classes which classi has passi students pass the exam and totali number of total students in the class.</p>
-								<p>To calculate the average pass ratio of the school we should:</p>
-								<ol>
-								<li>Calculate the average pass ratio of the class => classPassRatio = pass / total</li>
-								<li>Calculate the average pass ratio of the school => schoolPassRatio = sum of classPassRatio / numberOfClasses</li>
-								</ol>
-								<p>From the above steps, in order to get the maximum average pass ratio, we need to get the maximum sum of classPassRatio, which means we need to maximize the pass ratio when we assign extra students to the specific class. To do this we need to calculate the impact when we assign a extra student:</p>
-								<ul>
-								<li>currentRatio = pass / total</li>
-								<li>afterAssignedExtraStudentRatio = pass+1 / total+1</li>
-								<li>Impact = afterAssignedExtraStudentRatio - currentRatio</li>
-								</ul>
-								<p>To always get the largest impact, we will use the max heap data structure. We know that in python, heapq can only generate min heap for us but we can use negative number to turn the min heap to max heap</p>
-								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/57237a81b45a6d4995cf288d93faf3a6.js"></script>
+								<div class="content">
+									<h3>Problem Analysis</h3>
+									<span class="featured_img"><img src="images/post006.png" alt="" width="500" /></span>
+									<p>We need to calculate the maximum average pass ratio in this problem. We are given a 2D array that stands for classes which classi has passi students pass the exam and totali number of total students in the class.</p>
+									<p>To calculate the average pass ratio of the school we should:</p>
+									<ol>
+									<li>Calculate the average pass ratio of the class => classPassRatio = pass / total</li>
+									<li>Calculate the average pass ratio of the school => schoolPassRatio = sum of classPassRatio / numberOfClasses</li>
+									</ol>
+									<p>From the above steps, in order to get the maximum average pass ratio, we need to get the maximum sum of classPassRatio, which means we need to maximize the pass ratio when we assign extra students to the specific class. To do this we need to calculate the impact when we assign a extra student:</p>
+									<ul>
+									<li>currentRatio = pass / total</li>
+									<li>afterAssignedExtraStudentRatio = pass+1 / total+1</li>
+									<li>Impact = afterAssignedExtraStudentRatio - currentRatio</li>
+									</ul>
+									<p>To always get the largest impact, we will use the max heap data structure. We know that in python, heapq can only generate min heap for us but we can use negative number to turn the min heap to max heap</p>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/57237a81b45a6d4995cf288d93faf3a6.js"></script>
+								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>

@@ -69,18 +69,20 @@
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<h3>Definition</h3>
-								<p>LRU_Cache stands for least recently used cache.</p>
-								<p>lru_cache() is one such function in python functools module which helps in reducing the execution time of the function by using memoization technique.</p>
-								<blockquote>
-									<strong>Syntax:</strong><br>
-									@lru_cache(maxsize=128, typed=False)<br><br>
-									<strong>Parameters:</strong><br>
-									maxsize: This parameter sets the size of the cache, the cache can store upto maxsize most recent function calls, if maxsize is set to None, the LRU feature will be disabled and the cache can grow without any limitations<br><br>
-									typed: If typed is set to True, function arguments of different types will be cached separately. For example, f(5) and f(5.0) will be treated as distinct calls with distinct results and they will be stored in two separate entries in the cache<br>
-								</blockquote>
-								<h3>Code</h3>
-								<script src="https://gist.github.com/szhang5/d67e189b99e7d0c068c1bc634657aa2a.js"></script>
+								<div class="content">
+									<h3>Definition</h3>
+									<p>LRU_Cache stands for least recently used cache.</p>
+									<p>lru_cache() is one such function in python functools module which helps in reducing the execution time of the function by using memoization technique.</p>
+									<blockquote>
+										<strong>Syntax:</strong><br>
+										@lru_cache(maxsize=128, typed=False)<br><br>
+										<strong>Parameters:</strong><br>
+										maxsize: This parameter sets the size of the cache, the cache can store upto maxsize most recent function calls, if maxsize is set to None, the LRU feature will be disabled and the cache can grow without any limitations<br><br>
+										typed: If typed is set to True, function arguments of different types will be cached separately. For example, f(5) and f(5.0) will be treated as distinct calls with distinct results and they will be stored in two separate entries in the cache<br>
+									</blockquote>
+									<h3>Code</h3>
+									<script src="https://gist.github.com/szhang5/d67e189b99e7d0c068c1bc634657aa2a.js"></script>
+								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">lru_cache</a></li>

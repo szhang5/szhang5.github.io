@@ -69,22 +69,24 @@
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<h3>Problem Analysis</h3>
-								<p>There is a donuts shop that bakes donuts in batches of batchSize. They have a rule where they must serve all of the donuts of a batch before serving any donuts of the next batch. You are given an integer batchSize and an integer array groups, where groups[i] denotes that there is a group of groups[i] customers that will visit the shop. Each customer will get exactly one donut.</p>
-								<p>When a group visits the shop, all customers of the group must be served before serving any of the following groups. A group will be happy if they all get fresh donuts. That is, the first customer of the group does not receive a donut that was left over from the previous group.</p>
-								<p>You can freely rearrange the ordering of the groups. Return the maximum possible number of happy groups after rearranging the groups.</p>
-								<span class="featured_img"><img src="images/post012.png" alt="" width="500" /></span>
-								<p>
-									To maximize the number of happy groups, we need to make sure the minimum number of groups add up is divisible by the batchSize.<br>
-									For example, batchSize = 4 and groups = [1,3,2,5,2,2,1,6]<br>
-									5+3<br>
-									6+2<br>
-									2+2<br>
-									1+1<br>
-									There are 4 happy groups<br>
-									If we use combinations like 1+1+2 then these 3 groups will only have one happy group which will reduce the number of happy group</p>
-								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/c9374b8477caba24037cdc2c8513b8bd.js"></script>
+								<div class="content">
+									<h3>Problem Analysis</h3>
+									<p>There is a donuts shop that bakes donuts in batches of batchSize. They have a rule where they must serve all of the donuts of a batch before serving any donuts of the next batch. You are given an integer batchSize and an integer array groups, where groups[i] denotes that there is a group of groups[i] customers that will visit the shop. Each customer will get exactly one donut.</p>
+									<p>When a group visits the shop, all customers of the group must be served before serving any of the following groups. A group will be happy if they all get fresh donuts. That is, the first customer of the group does not receive a donut that was left over from the previous group.</p>
+									<p>You can freely rearrange the ordering of the groups. Return the maximum possible number of happy groups after rearranging the groups.</p>
+									<span class="featured_img"><img src="images/post012.png" alt="" width="500" /></span>
+									<p>
+										To maximize the number of happy groups, we need to make sure the minimum number of groups add up is divisible by the batchSize.<br>
+										For example, batchSize = 4 and groups = [1,3,2,5,2,2,1,6]<br>
+										5+3<br>
+										6+2<br>
+										2+2<br>
+										1+1<br>
+										There are 4 happy groups<br>
+										If we use combinations like 1+1+2 then these 3 groups will only have one happy group which will reduce the number of happy group</p>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/c9374b8477caba24037cdc2c8513b8bd.js"></script>
+								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>

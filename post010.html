@@ -69,43 +69,45 @@
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<h3>Problem Analysis</h3>
-								<span class="featured_img"><img src="images/post010.png" alt="" width="500" /></span>
-								<ol>
-									A pair of indices (i, j) is nice if it satisfies all of the following conditions:
-									<blockquote>
-										1) 0 <= i < j < nums.length<br>
-										2) nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])<br>
-									</blockquote>
-									<strong><span style="color: red">According to condition2, we have nums[i]-rev(nums[i]) == nums[j]-rev(nums[j])</span></strong><br>
-									When counting the nice pairs in an array, we can first calculate how many <strong>nums[i]-rev(nums[i]) </strong>have the same value.<br>
-									For example, nums = [13, 10, 35, 24, 76]
-									<blockquote>
-										13 - rev(13) = 13 - 31 = -22<br>
-										10 - rev(10) = 10 - 1 = 9<br>
-										35 - rev(35) = 35 - 53 = -22<br>
-										24 - rev(24) = 24 - 42 = -22<br>
-										76 - rev(76) = 76 - 67 = 9
-									</blockquote>
-								</ol>
-								<ol>
-									Therefore, we have counter = {-22 : 3, 9 : 2}<br>
-									The combinations are as the following:
-									<blockquote>
-									1) 13 - 35 --> 13 - rev(13) == 35 - rev(35)<br>
-									2) 13 - 24 --> 13 - rev(13) == 24 - rev(24)<br>
-									3) 24 - 35 --> 24 - rev(24) == 35 - rev(35)<br>
-									4) 10 - 76 --> 10 - rev(10) == 76 - rev(76)<br>
-									</blockquote>
-								</ol>
-								<p>
-									There are 2 same values of 9 so there are 2 * (2-1) // 2 = 1 combination<br>
-									There are 3 same values of -22 so there are 3 * (3-1) // 2 = 3 combinations.<br>
-									If there are 4 same values of X, there will be 4 * (4-1) // 2 = 6 combinations<br>
-									E.g. [1,2,3,4] --> 1-2, 1-3, 1-4, 2-3, 2-4, 3-4
-								</p>
-								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/436c85aa78b268e0677f78d25dddfab0.js"></script>
+								<div class="content">
+									<h3>Problem Analysis</h3>
+									<span class="featured_img"><img src="images/post010.png" alt="" width="500" /></span>
+									<ol>
+										A pair of indices (i, j) is nice if it satisfies all of the following conditions:
+										<blockquote>
+											1) 0 <= i < j < nums.length<br>
+											2) nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])<br>
+										</blockquote>
+										<strong><span style="color: red">According to condition2, we have nums[i]-rev(nums[i]) == nums[j]-rev(nums[j])</span></strong><br>
+										When counting the nice pairs in an array, we can first calculate how many <strong>nums[i]-rev(nums[i]) </strong>have the same value.<br>
+										For example, nums = [13, 10, 35, 24, 76]
+										<blockquote>
+											13 - rev(13) = 13 - 31 = -22<br>
+											10 - rev(10) = 10 - 1 = 9<br>
+											35 - rev(35) = 35 - 53 = -22<br>
+											24 - rev(24) = 24 - 42 = -22<br>
+											76 - rev(76) = 76 - 67 = 9
+										</blockquote>
+									</ol>
+									<ol>
+										Therefore, we have counter = {-22 : 3, 9 : 2}<br>
+										The combinations are as the following:
+										<blockquote>
+										1) 13 - 35 --> 13 - rev(13) == 35 - rev(35)<br>
+										2) 13 - 24 --> 13 - rev(13) == 24 - rev(24)<br>
+										3) 24 - 35 --> 24 - rev(24) == 35 - rev(35)<br>
+										4) 10 - 76 --> 10 - rev(10) == 76 - rev(76)<br>
+										</blockquote>
+									</ol>
+									<p>
+										There are 2 same values of 9 so there are 2 * (2-1) // 2 = 1 combination<br>
+										There are 3 same values of -22 so there are 3 * (3-1) // 2 = 3 combinations.<br>
+										If there are 4 same values of X, there will be 4 * (4-1) // 2 = 6 combinations<br>
+										E.g. [1,2,3,4] --> 1-2, 1-3, 1-4, 2-3, 2-4, 3-4
+									</p>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/436c85aa78b268e0677f78d25dddfab0.js"></script>
+								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>

@@ -2553,6 +2553,9 @@ input, select, textarea {
 				}
 
 /* Posts */
+	div.content {
+		margin-top: 2em;
+	}
 
 	ul.posts {
 		list-style: none;

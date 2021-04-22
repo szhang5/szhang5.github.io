@@ -69,32 +69,34 @@
 										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
-								<h3>Problem Analysis</h3>
-								<span class="featured_img"><img src="images/post004.png" alt="" width="500" /></span>
-								<p>We have a list of coins and we need to return the maximum number of consecutive integer values that we can make with the coins starting from and including 0.</p>
-								<p>Let&rsquo;s compare two examples:</p>
-								<blockquote>
-									Example 1:<br>
-									Coins = [1, 1, 1, 4]<br>
-									0 :&nbsp;<br>
-									1: 1<br>
-									2: 1+1<br>
-									3: 1+1+1<br>
-									4: 4<br>
-									5: 4+1 (we can do this because we have 4 and 1)<br>
-									6: 4+1+1 (we can do this because we have 4 and 2)<br>
-									7: 4+1+1+1 ( we can do this because we have 4 and 3)<br>
-									8?? (we have 6 and 2 why can not add it up to 8? because the maximum sum is 7 based on the coins)
-								</blockquote>
-								<blockquote>
-									Example 2:<br>
-									Coins = [1, 4, 6]<br>
-									0:&nbsp;<br>
-									1: 1<br>
-									2?? (we have 1 why cannot use 1+1? because we only have one &lsquo;1&rsquo; in the coins)
-								</blockquote>
-								<h3>Code Example</h3>
-								<script src="https://gist.github.com/szhang5/9b707b2871559b0a40669c2165c63616.js"></script>
+								<div class="content">
+									<h3>Problem Analysis</h3>
+									<span class="featured_img"><img src="images/post004.png" alt="" width="500" /></span>
+									<p>We have a list of coins and we need to return the maximum number of consecutive integer values that we can make with the coins starting from and including 0.</p>
+									<p>Let&rsquo;s compare two examples:</p>
+									<blockquote>
+										Example 1:<br>
+										Coins = [1, 1, 1, 4]<br>
+										0 :&nbsp;<br>
+										1: 1<br>
+										2: 1+1<br>
+										3: 1+1+1<br>
+										4: 4<br>
+										5: 4+1 (we can do this because we have 4 and 1)<br>
+										6: 4+1+1 (we can do this because we have 4 and 2)<br>
+										7: 4+1+1+1 ( we can do this because we have 4 and 3)<br>
+										8?? (we have 6 and 2 why can not add it up to 8? because the maximum sum is 7 based on the coins)
+									</blockquote>
+									<blockquote>
+										Example 2:<br>
+										Coins = [1, 4, 6]<br>
+										0:&nbsp;<br>
+										1: 1<br>
+										2?? (we have 1 why cannot use 1+1? because we only have one &lsquo;1&rsquo; in the coins)
+									</blockquote>
+									<h3>Code Example</h3>
+									<script src="https://gist.github.com/szhang5/9b707b2871559b0a40669c2165c63616.js"></script>
+								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
