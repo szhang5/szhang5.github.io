@@ -2739,7 +2739,7 @@ input, select, textarea {
 		padding: 3em 3em 1em 3em ;
 		background: #ffffff;
 		border: solid 1px rgba(160, 160, 160, 0.3);
-		margin: 0 0 3em 0;
+		margin: 0 0 1em 0;
 		position: relative;
 	}
 
@@ -2750,7 +2750,7 @@ input, select, textarea {
 			display: flex;
 			border-bottom: solid 1px rgba(160, 160, 160, 0.3);
 			left: -3em;
-			margin: -3em 0 3em 0;
+			margin: -3em 0 -1em 0;
 			position: relative;
 			width: calc(100% + 6em);
 		}
@@ -2957,14 +2957,14 @@ input, select, textarea {
 			.post {
 				padding: 1.5em 1.5em 0.1em 1.5em ;
 				left: -1.5em;
-				margin: 0 0 2em 0;
+				margin: 0 0 1em 0;
 				width: calc(100% + (1.5em * 2));
 			}
 
 				.post > header {
 					padding: 3em 1.5em 0.5em 1.5em ;
 					left: -1.5em;
-					margin: -1.5em 0 1.5em 0;
+					margin: -1.5em 0 0.5em 0;
 					width: calc(100% + 3em);
 				}
 
