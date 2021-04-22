@@ -1,0 +1,255 @@
+<!DOCTYPE HTML>
+<!--
+	Future Imperfect by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Fenwick Tree</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="single is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html">Shiyun's Blog</a></h1>
+						<nav class="links">
+							<ul>
+							<!-- 	<li><a href="#">Lorem</a></li>
+								<li><a href="#">Ipsum</a></li>
+								<li><a href="#">Feugiat</a></li>
+								<li><a href="#">Tempus</a></li>
+								<li><a href="#">Adipiscing</a></li> -->
+							</ul>
+						</nav>
+						<nav class="main">
+							<ul>
+								<li class="search">
+									<a class="fa-search" href="#search">Search</a>
+									<form id="search" method="get" action="#">
+										<input type="text" name="query" placeholder="Search" />
+									</form>
+								</li>
+								<li class="menu">
+									<a class="fa-bars" href="#menu">Menu</a>
+								</li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<section id="menu">
+
+						<!-- Search -->
+							<section>
+								<form class="search" method="get" action="#">
+									<input type="text" name="query" placeholder="Search" />
+								</form>
+							</section>
+					</section>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<article class="post">
+								<header>
+									<div class="title">
+										<h2><a href="#">Fenwick Tree</a></h2>
+										<p>Binary Indexed Tree</p>
+									</div>
+									<div class="meta">
+										<time class="published" datetime="2021-04-22">April 22, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+									</div>
+								</header>
+								<h3>Definition</h3>
+								<p><strong>A Fenwick tree or binary indexed tree</strong> is a data structure that can efficiently update elements and calculate prefix sums in a table of numbers.</p>
+								<h3>How does Fenwick Tree work?</h3>
+								<p>Given an arr = [3,2,-1,6,5,4,-3], we will use Fenwick Tree to efficiently update elements and calculate prefix sums.</p>
+								<h4>Construct a Fenwick Tree:</h4>
+								<span class="featured_img"><img src="images/post016_1.png" alt="" width="500" /></span>
+								<p>We calculate the parent index by flipping the rightmost set bit of the current index as the following:</p>
+								<div class="table-wrapper">
+								<table>
+								<tbody>
+								<tr>
+								<td>index</td>
+								<td>flip the rightmost set bit</td>
+								</tr>
+								<tr>
+								<td>1 = 001</td>
+								<td>000 = 0</td>
+								</tr>
+								<tr>
+								<td>2 = 010</td>
+								<td>000 = 0</td>
+								</tr>
+								<tr>
+								<td>3 = 011</td>
+								<td>010 = 2</td>
+								</tr>
+								<tr>
+								<td>4 = 100</td>
+								<td>000 = 0</td>
+								</tr>
+								<tr>
+								<td>5 = 101</td>
+								<td>100 = 4</td>
+								</tr>
+								<tr>
+								<td>6 = 110</td>
+								<td>100 = 4</td>
+								</tr>
+								<tr>
+								<td>7 = 111</td>
+								<td>110 = 6</td>
+								</tr>
+								</tbody>
+								</table>
+								</div>
+								<p>That's how to get the fenwick tree we need above.</p>
+								<span class="featured_img"><img src="images/post016_3.png" alt="" width="500" /></span>
+								<h4>Insert Value to Fenwick Tree:</h4>
+								<span class="featured_img"><img src="images/post016_4.png" alt="" width="500" /></span>
+								<blockquote>
+									Here we have:<br>
+									1 = 0 + 20 -> FenwickTree[1] should be sum range from 0 to next 1 element which is 3<br>
+									2 = 0 + 21 -> FenwickTree[2] should be sum range from 0 to next 2 element which is 3+2 = 5<br>
+									3 = 21 + 20 -> FenwickTree[3] should be sum range from 2 to next 1 element which is -1<br>
+									4 = 0 + 22 -> FenwickTree[4] should be sum range from 0 to next 4 element which is -3+2+1+6 = 10<br>
+									5 = 22 + 20 -> FenwickTree[5] should be sum range from 4 to next 1 element which is 5<br>
+									6 = 22 + 21 -> FenwickTree[6] should be sum range from 4 to next 2 element which is 5+4 = 9<br>
+									7 = 22 + 21 + 20 FenwickTree[7] should be sum range from 6 to next 1 element which is -3<br>
+								</blockquote>
+								<p><strong>arr:</strong></p>
+								<div class="table-wrapper">
+								<table>
+								<tbody>
+								<tr>
+								<td>index</td>
+								<td>0</td>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								</tr>
+								<tr>
+								<td>value</td>
+								<td>3</td>
+								<td>2</td>
+								<td>-1</td>
+								<td>6</td>
+								<td>5</td>
+								<td>4</td>
+								<td>-3</td>
+								</tr>
+								</tbody>
+								</table>
+								</div>
+								<p><strong>Fenwick Tree</strong></p>
+								<div>
+								<table>
+								<tbody>
+								<tr>
+								<td>index</td>
+								<td>0(dummy)</td>
+								<td>1</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+								</tr>
+								<tr>
+								<td>value</td>
+								<td>0(dummy)</td>
+								<td>3</td>
+								<td>5</td>
+								<td>-1</td>
+								<td>10</td>
+								<td>5</td>
+								<td>9</td>
+								<td>-3</td>
+								</tr>
+								</tbody>
+								</table>
+								</div>
+								<span class="featured_img"><img src="images/post016_2.png" alt="" width="500" /></span>
+								<p>After inserting the value to the Fenwick tree, we can easily get a sum from range 0 to i.</p>
+								<blockquote>
+									<strong>Example 1</strong><br>
+									if we want to get sum from range 0 to 6(included):<br>
+									Total = FenwickTree[7] + FenwickTree[6] + FenwickTree[4] + FenwickTree[0]<br>
+									= -3 + 9 + 10 + 0<br>
+									= 16<br>
+								</blockquote>
+								<blockquote>
+									<strong>Example 2</strong><br>
+									If we want to get sum from range 0 to 4(included):<br>
+									Total = FenwickTree[5] + FenwickTree[4] + FenwickTree[0]<br>
+									= 5 + 10 + 0<br>
+									= 15<br>
+								</blockquote>
+								<p>From the above we know that we find the parent in order to get the sum.</p>
+								<blockquote>
+								<strong>To get parent index:</strong><br>
+								1. 2's complement<br>
+								2. AND it with the child index<br>
+								3. Subtract from the child index<br>
+								E.g. 7 = 111<br>
+								-> 2's complement of 7 is 001<br>
+								-> 111 & 001 = 001<br>
+								-> 111 - 001 = 110 = 6<br>
+								So 7's parent is 6 => 6 = 7 & (7-1)<br>
+								</blockquote>
+								<p>Therefore we have our getsum():</p>
+								<span class="featured_img"><img src="images/post016_5.png" alt="" width="500" /></span>
+								<h3>Complete Code</h3>
+								<script src="https://gist.github.com/szhang5/8e53b08c94d83c00ae2016da2b7158ce.js"></script>
+								<h3>Time Complexity</h3>
+								<span class="featured_img"><img src="images/post016_6.png" alt="" width="300" /></span>
+								<p>Video Reference</p>
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/CWDQJGaN1gY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<footer>
+									<ul class="stats">
+										<li><a href="#" class="icon solid fa-hashtag">fenwick_tree</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">python</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">tree</a></li>
+									</ul>
+								</footer>
+							</article>
+
+					</div>
+
+				<!-- Footer -->
+					<section id="footer">
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+						</ul>
+						<p class="copyright">&copy; Shiyun Zhang 2021. Design: <a href="http://html5up.net">HTML5 UP</a>. </p>
+					</section>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
