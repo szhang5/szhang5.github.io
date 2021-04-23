@@ -2975,6 +2975,10 @@ input, select, textarea {
 						font-size: 1.1em;
 					}
 
+			iframe {
+				width: 100%;
+			}
+
 		}
 
 		@media screen and (max-width: 480px) {
@@ -3025,6 +3029,10 @@ input, select, textarea {
 						margin: 0 0 0 1.25em;
 						padding: 0 0 0 1.25em;
 					}
+
+			iframe {
+				width: 100%;
+			}
 
 		}
 
