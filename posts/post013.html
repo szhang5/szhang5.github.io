@@ -6,10 +6,10 @@
 -->
 <html>
 	<head>
-		<title>Leetcode1818</title>
+		<title>Leetcode1793</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="single is-preload">
 
@@ -61,41 +61,43 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">1818. Minimum Absolute Sum Difference</a></h2>
-										<p>Medium Problem</p>
+										<h2><a href="#">1793. Maximum Score of a Good Subarray</a></h2>
+										<p>Hard Problem</p>
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2021-04-15">April 15, 2021</time>
-										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="../images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
 								<div class="content">
 									<h3>Problem Analysis</h3>
+									<p>You are given an array of integers nums (0-indexed) and an integer k.</p>
+									<p>The score of a subarray (i, j) is defined as min(nums[i], nums[i+1], ..., nums[j]) * (j - i + 1). A good subarray is a subarray where i &lt;= k &lt;= j.</p>
+									<p>Return the maximum possible score of a good subarray.</p>
+									<span class="featured_img"><img src="../images/post013.png" alt="" width="500" /></span>
 									<p>
-										You are given two positive integer arrays nums1 and nums2, both of length n.<br>
-										The absolute sum difference of arrays nums1 and nums2 is defined as the sum of |nums1[i] - nums2[i]| for each 0 <= i < n (0-indexed).<br>
-										You can replace at most one element of nums1 with any other element in nums1 to minimize the absolute sum difference.<br>
-										Return the minimum absolute sum difference after replacing at most one element in the array nums1. Since the answer may be large, return it modulo 10**9 + 7.<br>
-										To minimize the absolute sum difference, we only need to find the maximum difference pair (x, y) x in nums1, y in nums2 and then find the minimum difference element for x in nums1</p>
-									<span class="featured_img"><img src="images/post011.png" alt="" width="500" /></span>
+										According to the problem, the score is calculated by:<br>
+										<strong>(minimum number in an subarray) * (length of the subarray)</strong>
+									</p>
 									<p>
-										For example:<br>
-										nums1 = [1, 10, 4, 4, 2, 7]<br>
-										nums2 = [9. 3, 5, 1, 7, 4]<br>
-										The difference are 8, 7, 1, 3, 5, 3 --> sum = 8+7+1+3+5+3 = 27<br>
-										So the maximum difference pair is (1, 9)<br>
-										Now find an element in nums1 to replace 1 to minimize the sum difference:<br>
-										|10-9| = 1, |4-9| = 5, |4-9|=5, |2-9| = 7, |7-9|=2<br>
-										So 10 will be the best element to replace 1<br>
-										Final result should be 27 - 8 + 1 = 20</p>
+										For example: nums = [1,4,3,7,4,5], k = 3<br>
+										Then we need to see the kth element as center of the subarray<br>
+										<blockquote>
+											1) Subarray = [3] --> score = 3 * 1 = 3<br>
+											2) Subarray = [4,3] --> score = 3 * 2 = 6<br>
+											3) Subarray = [3, 7] --> score = 3 * 2 = 6<br>
+											4) Subarray = [4,3,7] --> score = 3 * 3 = 9<br>
+										</blockquote>
+									</p>
+									<p>From the above we can see, when the minimum number in the subarray does not change, the maximum score will be determined by the length. We should find the longest length for the specific minimum number. E.g. when minimum number is 3, we should get subarray = [4,3,7,4,5] which score is 3 * 5 = 15 and then switch to minimum number = 1, where subarray = [1,4,3,7,4,5] and score is 1 * 6 = 6.</p>
 									<h3>Code Example</h3>
-									<script src="https://gist.github.com/szhang5/5cca33bc35d694db45f9deb4d9166711.js"></script>
+									<script src="https://gist.github.com/szhang5/29f4d46ce200957899eaddb56c7716d9.js"></script>
 								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">1818</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1793</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Hard</a></li>
 									</ul>
 								</footer>
 							</article>
@@ -116,11 +118,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

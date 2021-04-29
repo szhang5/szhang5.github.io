@@ -6,10 +6,10 @@
 -->
 <html>
 	<head>
-		<title>Leetcode1797</title>
+		<title>Leetcode1814</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="single is-preload">
 
@@ -61,39 +61,57 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">1797. Design Authentication Manager</a></h2>
+										<h2><a href="#">1814. Count Nice Pairs in an Array</a></h2>
 										<p>Medium Problem</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2021-03-26">March 26, 2021</time>
-										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+										<time class="published" datetime="2021-04-15">April 15, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="../images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
 								<div class="content">
 									<h3>Problem Analysis</h3>
-									<span class="featured_img"><img src="images/post005.png" alt="" width="500" /></span>
-									<p>Need to design an AuthenticationManager to generate tokens. When initializing theAuthenticationManager, we will initialize the token life which is TimeToLive. For the above example, we call AuthenticationManager(5) then we will have token Life for 5 seconds.</p>
-									<p>If generated('aaa', 2) then token 'aaa' will expire at 2+5 = 7 second. Here we need to have something to store the tokens and its life. Dict is the first choice here because we have tokenId. Since we need to count unexpiredToken, to avoid looping through the Dict everytime, we may want to use the orderedDict so that we can put the newly generated token or renewed token to the end of the Dict.</p>
-									<p>Let's go through the example above:</p>
+									<span class="featured_img"><img src="../images/post010.png" alt="" width="500" /></span>
 									<ol>
-										<li>init an OrderedDict => d = {} and we know the tokenLife = 5</li>
-										<li>renew tokenId 'aaa' at 1. We don't have tokenId in d, ignore it</li>
-										<li>generate tokenId 'aaa' at 2 => d = {'aaa': 7(2+5)}</li>
-										<li>countUnexpriedTokens at 6, we got 1 which is 'aaa'</li>
-										<li>generate tokenId 'bbb' at 7 => d = {'aaa': 7 (expired), 'bbb':12}, here we should remove the expired token 'aaa' from d.</li>
-										<li>renew tokenId 'aaa' at 8. 'aaa' is expired, ignore it</li>
-										<li>renew tokenId 'bbb' at 10. 'bbb' is alive => d = {'bbb': 15(10+5)}</li>
-										<li>countUnexpriedTokens at 15, d = {'bbb' : 15}, no token alive, return 0</li>
+										A pair of indices (i, j) is nice if it satisfies all of the following conditions:
+										<blockquote>
+											1) 0 <= i < j < nums.length<br>
+											2) nums[i] + rev(nums[j]) == nums[j] + rev(nums[i])<br>
+										</blockquote>
+										<strong><span style="color: red">According to condition2, we have nums[i]-rev(nums[i]) == nums[j]-rev(nums[j])</span></strong><br>
+										When counting the nice pairs in an array, we can first calculate how many <strong>nums[i]-rev(nums[i]) </strong>have the same value.<br>
+										For example, nums = [13, 10, 35, 24, 76]
+										<blockquote>
+											13 - rev(13) = 13 - 31 = -22<br>
+											10 - rev(10) = 10 - 1 = 9<br>
+											35 - rev(35) = 35 - 53 = -22<br>
+											24 - rev(24) = 24 - 42 = -22<br>
+											76 - rev(76) = 76 - 67 = 9
+										</blockquote>
 									</ol>
-
-									<p>To always keep the token in d alive, we need to remove the expired token in time.</p>
+									<ol>
+										Therefore, we have counter = {-22 : 3, 9 : 2}<br>
+										The combinations are as the following:
+										<blockquote>
+										1) 13 - 35 --> 13 - rev(13) == 35 - rev(35)<br>
+										2) 13 - 24 --> 13 - rev(13) == 24 - rev(24)<br>
+										3) 24 - 35 --> 24 - rev(24) == 35 - rev(35)<br>
+										4) 10 - 76 --> 10 - rev(10) == 76 - rev(76)<br>
+										</blockquote>
+									</ol>
+									<p>
+										There are 2 same values of 9 so there are 2 * (2-1) // 2 = 1 combination<br>
+										There are 3 same values of -22 so there are 3 * (3-1) // 2 = 3 combinations.<br>
+										If there are 4 same values of X, there will be 4 * (4-1) // 2 = 6 combinations<br>
+										E.g. [1,2,3,4] --> 1-2, 1-3, 1-4, 2-3, 2-4, 3-4
+									</p>
 									<h3>Code Example</h3>
-									<script src="https://gist.github.com/szhang5/9bfd94fe6e3d7d2915defbb0992980c6.js"></script>
+									<script src="https://gist.github.com/szhang5/436c85aa78b268e0677f78d25dddfab0.js"></script>
 								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">1797</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1814</a></li>
 										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
 									</ul>
 								</footer>
@@ -115,11 +133,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

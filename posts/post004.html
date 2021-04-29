@@ -6,10 +6,10 @@
 -->
 <html>
 	<head>
-		<title>Leetcode1792</title>
+		<title>Leetcode1789</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="single is-preload">
 
@@ -61,37 +61,46 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">1792. Maximum Average Pass Ratio</a></h2>
+										<h2><a href="#">1789. Maximum Number of Consecutive Values You Can Make</a></h2>
 										<p>Medium Problem</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2021-03-27">March 27, 2021</time>
-										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+										<time class="published" datetime="2021-03-26">March 26, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="../images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
 								<div class="content">
 									<h3>Problem Analysis</h3>
-									<span class="featured_img"><img src="images/post006.png" alt="" width="500" /></span>
-									<p>We need to calculate the maximum average pass ratio in this problem. We are given a 2D array that stands for classes which classi has passi students pass the exam and totali number of total students in the class.</p>
-									<p>To calculate the average pass ratio of the school we should:</p>
-									<ol>
-									<li>Calculate the average pass ratio of the class => classPassRatio = pass / total</li>
-									<li>Calculate the average pass ratio of the school => schoolPassRatio = sum of classPassRatio / numberOfClasses</li>
-									</ol>
-									<p>From the above steps, in order to get the maximum average pass ratio, we need to get the maximum sum of classPassRatio, which means we need to maximize the pass ratio when we assign extra students to the specific class. To do this we need to calculate the impact when we assign a extra student:</p>
-									<ul>
-									<li>currentRatio = pass / total</li>
-									<li>afterAssignedExtraStudentRatio = pass+1 / total+1</li>
-									<li>Impact = afterAssignedExtraStudentRatio - currentRatio</li>
-									</ul>
-									<p>To always get the largest impact, we will use the max heap data structure. We know that in python, heapq can only generate min heap for us but we can use negative number to turn the min heap to max heap</p>
+									<span class="featured_img"><img src="../images/post004.png" alt="" width="500" /></span>
+									<p>We have a list of coins and we need to return the maximum number of consecutive integer values that we can make with the coins starting from and including 0.</p>
+									<p>Let&rsquo;s compare two examples:</p>
+									<blockquote>
+										Example 1:<br>
+										Coins = [1, 1, 1, 4]<br>
+										0 :&nbsp;<br>
+										1: 1<br>
+										2: 1+1<br>
+										3: 1+1+1<br>
+										4: 4<br>
+										5: 4+1 (we can do this because we have 4 and 1)<br>
+										6: 4+1+1 (we can do this because we have 4 and 2)<br>
+										7: 4+1+1+1 ( we can do this because we have 4 and 3)<br>
+										8?? (we have 6 and 2 why can not add it up to 8? because the maximum sum is 7 based on the coins)
+									</blockquote>
+									<blockquote>
+										Example 2:<br>
+										Coins = [1, 4, 6]<br>
+										0:&nbsp;<br>
+										1: 1<br>
+										2?? (we have 1 why cannot use 1+1? because we only have one &lsquo;1&rsquo; in the coins)
+									</blockquote>
 									<h3>Code Example</h3>
-									<script src="https://gist.github.com/szhang5/57237a81b45a6d4995cf288d93faf3a6.js"></script>
+									<script src="https://gist.github.com/szhang5/9b707b2871559b0a40669c2165c63616.js"></script>
 								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">1792</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1789</a></li>
 										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
 									</ul>
 								</footer>
@@ -113,11 +122,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

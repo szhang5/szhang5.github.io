@@ -6,10 +6,10 @@
 -->
 <html>
 	<head>
-		<title>Leetcode1793</title>
+		<title>Leetcode1797</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="single is-preload">
 
@@ -61,43 +61,40 @@
 							<article class="post">
 								<header>
 									<div class="title">
-										<h2><a href="#">1793. Maximum Score of a Good Subarray</a></h2>
-										<p>Hard Problem</p>
+										<h2><a href="#">1797. Design Authentication Manager</a></h2>
+										<p>Medium Problem</p>
 									</div>
 									<div class="meta">
-										<time class="published" datetime="2021-04-15">April 15, 2021</time>
-										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+										<time class="published" datetime="2021-03-26">March 26, 2021</time>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="../images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
 								<div class="content">
 									<h3>Problem Analysis</h3>
-									<p>You are given an array of integers nums (0-indexed) and an integer k.</p>
-									<p>The score of a subarray (i, j) is defined as min(nums[i], nums[i+1], ..., nums[j]) * (j - i + 1). A good subarray is a subarray where i &lt;= k &lt;= j.</p>
-									<p>Return the maximum possible score of a good subarray.</p>
-									<span class="featured_img"><img src="images/post013.png" alt="" width="500" /></span>
-									<p>
-										According to the problem, the score is calculated by:<br>
-										<strong>(minimum number in an subarray) * (length of the subarray)</strong>
-									</p>
-									<p>
-										For example: nums = [1,4,3,7,4,5], k = 3<br>
-										Then we need to see the kth element as center of the subarray<br>
-										<blockquote>
-											1) Subarray = [3] --> score = 3 * 1 = 3<br>
-											2) Subarray = [4,3] --> score = 3 * 2 = 6<br>
-											3) Subarray = [3, 7] --> score = 3 * 2 = 6<br>
-											4) Subarray = [4,3,7] --> score = 3 * 3 = 9<br>
-										</blockquote>
-									</p>
-									<p>From the above we can see, when the minimum number in the subarray does not change, the maximum score will be determined by the length. We should find the longest length for the specific minimum number. E.g. when minimum number is 3, we should get subarray = [4,3,7,4,5] which score is 3 * 5 = 15 and then switch to minimum number = 1, where subarray = [1,4,3,7,4,5] and score is 1 * 6 = 6.</p>
+									<span class="featured_img"><img src="../images/post005.png" alt="" width="500" /></span>
+									<p>Need to design an AuthenticationManager to generate tokens. When initializing theAuthenticationManager, we will initialize the token life which is TimeToLive. For the above example, we call AuthenticationManager(5) then we will have token Life for 5 seconds.</p>
+									<p>If generated('aaa', 2) then token 'aaa' will expire at 2+5 = 7 second. Here we need to have something to store the tokens and its life. Dict is the first choice here because we have tokenId. Since we need to count unexpiredToken, to avoid looping through the Dict everytime, we may want to use the orderedDict so that we can put the newly generated token or renewed token to the end of the Dict.</p>
+									<p>Let's go through the example above:</p>
+									<ol>
+										<li>init an OrderedDict => d = {} and we know the tokenLife = 5</li>
+										<li>renew tokenId 'aaa' at 1. We don't have tokenId in d, ignore it</li>
+										<li>generate tokenId 'aaa' at 2 => d = {'aaa': 7(2+5)}</li>
+										<li>countUnexpriedTokens at 6, we got 1 which is 'aaa'</li>
+										<li>generate tokenId 'bbb' at 7 => d = {'aaa': 7 (expired), 'bbb':12}, here we should remove the expired token 'aaa' from d.</li>
+										<li>renew tokenId 'aaa' at 8. 'aaa' is expired, ignore it</li>
+										<li>renew tokenId 'bbb' at 10. 'bbb' is alive => d = {'bbb': 15(10+5)}</li>
+										<li>countUnexpriedTokens at 15, d = {'bbb' : 15}, no token alive, return 0</li>
+									</ol>
+
+									<p>To always keep the token in d alive, we need to remove the expired token in time.</p>
 									<h3>Code Example</h3>
-									<script src="https://gist.github.com/szhang5/29f4d46ce200957899eaddb56c7716d9.js"></script>
+									<script src="https://gist.github.com/szhang5/9bfd94fe6e3d7d2915defbb0992980c6.js"></script>
 								</div>
 								<footer>
 									<ul class="stats">
 										<li><a href="#" class="icon solid fa-hashtag">Leedcode</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">1793</a></li>
-										<li><a href="#" class="icon solid fa-hashtag">Hard</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">1797</a></li>
+										<li><a href="#" class="icon solid fa-hashtag">Medium</a></li>
 									</ul>
 								</footer>
 							</article>
@@ -118,11 +115,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>

@@ -9,7 +9,7 @@
 		<title>Fenwick Tree</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="../assets/css/main.css" />
 	</head>
 	<body class="single is-preload">
 
@@ -66,7 +66,7 @@
 									</div>
 									<div class="meta">
 										<time class="published" datetime="2021-04-22">April 22, 2021</time>
-										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="images/shiyunlogo.png" alt="" /></a>
+										<a href="#" class="author"><span class="name">Shiyun Zhang</span><img src="../images/shiyunlogo.png" alt="" /></a>
 									</div>
 								</header>
 								<div class="content">
@@ -75,7 +75,7 @@
 									<h3>How does Fenwick Tree work?</h3>
 									<p>Given an arr = [3,2,-1,6,5,4,-3], we will use Fenwick Tree to efficiently update elements and calculate prefix sums.</p>
 									<h4>Construct a Fenwick Tree:</h4>
-									<span class="featured_img"><img src="images/post016_1.png" alt="" width="500" /></span>
+									<span class="featured_img"><img src="../images/post016_1.png" alt="" width="500" /></span>
 									<p>We calculate the parent index by flipping the rightmost set bit of the current index as the following:</p>
 									<div class="table-wrapper">
 									<table>
@@ -116,9 +116,9 @@
 									</table>
 									</div>
 									<p>That's how to get the fenwick tree we need above.</p>
-									<span class="featured_img"><img src="images/post016_3.png" alt="" width="500" /></span>
+									<span class="featured_img"><img src="../images/post016_3.png" alt="" width="500" /></span>
 									<h4>Insert Value to Fenwick Tree:</h4>
-									<span class="featured_img"><img src="images/post016_4.png" alt="" width="500" /></span>
+									<span class="featured_img"><img src="../images/post016_4.png" alt="" width="500" /></span>
 									<blockquote>
 										Here we have:<br>
 										1 = 0 + 20 -> FenwickTree[1] should be sum range from 0 to next 1 element which is 3<br>
@@ -185,7 +185,7 @@
 									</tbody>
 									</table>
 									</div>
-									<span class="featured_img"><img src="images/post016_2.png" alt="" width="500" /></span>
+									<span class="featured_img"><img src="../images/post016_2.png" alt="" width="500" /></span>
 									<p>After inserting the value to the Fenwick tree, we can easily get a sum from range 0 to i.</p>
 									<blockquote>
 										<strong>Example 1</strong><br>
@@ -214,11 +214,11 @@
 									So 7's parent is 6 => 6 = 7 & (7-1)<br>
 									</blockquote>
 									<p>Therefore we have our getsum():</p>
-									<span class="featured_img"><img src="images/post016_5.png" alt="" width="500" /></span>
+									<span class="featured_img"><img src="../images/post016_5.png" alt="" width="500" /></span>
 									<h3>Complete Code</h3>
 									<script src="https://gist.github.com/szhang5/8e53b08c94d83c00ae2016da2b7158ce.js"></script>
 									<h3>Time Complexity</h3>
-									<span class="featured_img"><img src="images/post016_6.png" alt="" width="300" /></span>
+									<span class="featured_img"><img src="../images/post016_6.png" alt="" width="300" /></span>
 									<p>Video Reference</p>
 									<iframe width="560" height="315" src="https://www.youtube.com/embed/CWDQJGaN1gY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
@@ -247,11 +247,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="../assets/js/jquery.min.js"></script>
+			<script src="../assets/js/browser.min.js"></script>
+			<script src="../assets/js/breakpoints.min.js"></script>
+			<script src="../assets/js/util.js"></script>
+			<script src="../assets/js/main.js"></script>
 
 	</body>
 </html>
