@@ -2738,6 +2738,10 @@ input, select, textarea {
 
 /* Post */
 
+	article#detail-post {
+		margin: 0 10em;
+	}
+
 	.post {
 		padding: 3em 3em 1em 3em ;
 		background: #ffffff;
@@ -2875,6 +2879,9 @@ input, select, textarea {
 						}
 
 		@media screen and (max-width: 980px) {
+			article#detail-post {
+				margin: 0 0 1em 0;
+			}
 
 			.post {
 				border-left: 0;
@@ -2952,10 +2959,12 @@ input, select, textarea {
 							.post > header .meta .author img {
 								width: 3.5em;
 							}
-
 		}
 
 		@media screen and (max-width: 736px) {
+			article#detail-post {
+				margin: 0 0 1em 0;
+			}
 
 			.post {
 				padding: 1.5em 1.5em 0.1em 1.5em ;
@@ -2982,7 +2991,9 @@ input, select, textarea {
 		}
 
 		@media screen and (max-width: 480px) {
-
+			article#detail-post {
+				margin: 0 0 1em 0;
+			}
 			.post > header .meta {
 				-moz-align-items: center;
 				-webkit-align-items: center;
